@@ -16,7 +16,7 @@
     ];
 @endphp
 
-<nav x-data="{ open: false }" class="bg-green-600 border-b border-green-600 shadow ">
+<nav x-data="{ open: false }" class="bg-green-700 border-b border-green-600 shadow">
     <!-- Primary Navigation Menu -->
     <div class="container ">
         <div class="flex justify-between h-16">
