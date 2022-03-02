@@ -231,22 +231,25 @@ return [
         // Sidebar items:
         [
             'text'        => 'Dashboard',
-            //'route'         => 'dev.courses.index',
+            'route'         => 'admin.home',
             'icon'        => 'fas fa-fw fa-tachometer-alt',
 
 
         ],
-
         [
             'text'        => 'Lista de Roles',
-            'route'         => 'admin.roles.index',
+            'route'       => 'admin.roles.index',
             'can'       => 'Listar role',
-            'icon'        => 'fas fa-fw fa-user-cog',
+            'icon'         => 'fas fa-fw fa-user-cog',
             'active'    => ['admin/roles*'],
 
+
         ],
+
+
         [
             'text'        => 'Usuarios',
+            'url'       =>'admin/users',
             'route'         => 'admin.users.index',
             'icon'        => 'fas fa-fw fa-users',
             'can'         => 'Leer usuarios',

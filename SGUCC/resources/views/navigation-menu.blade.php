@@ -98,6 +98,8 @@
 
                 <!-- Settings Dropdown -->
                 <div class="relative ml-3">
+
+                    @auth
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -124,8 +126,20 @@
                             </div>
 
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                                {{ __('Perfil') }}
                             </x-jet-dropdown-link>
+                            @can('Leer cursos')
+                            <x-jet-dropdown-link href="{{ route('dev.courses.index') }}">
+                                {{ __('Dev') }}
+                            </x-jet-dropdown-link>
+                            @endcan
+
+
+                            @can('Ver dashboard')
+                            <x-jet-dropdown-link href="{{ route('admin.home') }}">
+                                {{ __('Administrador') }}
+                            </x-jet-dropdown-link>
+                            @endcan
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
@@ -193,8 +207,21 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('Perfil') }}
                 </x-jet-responsive-nav-link>
+
+                @can('Leer cursos')
+                <x-jet-responsive-nav-link href="{{ route('dev.courses.index') }}" :active="request()->routeIs('dev.courses.index')">
+                    {{ __('Dev') }}
+                </x-jet-responsive-nav-link>
+
+                @endcan
+
+                @can('Ver dashboard')
+                <x-jet-responsive-nav-link href="{{ route('admin.home') }}" :active="request()->routeIs('admin.home')">
+                    {{ __('Administrador') }}
+                </x-jet-responsive-nav-link>
+                @endcan
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
@@ -245,5 +272,17 @@
                 @endif
             </div>
         </div>
+@else
+
+            <div class="py-1 border-t border-gray-200">
+                <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                    <i class="fas fa-users-cog"></i>
+                </x-jet-responsive-nav-link>
+
+                <!--<x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                    Register
+                </x-jet-responsive-nav-link>-->
+            </div>
+        @endauth
     </div>
 </nav>
