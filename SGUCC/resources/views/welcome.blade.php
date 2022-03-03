@@ -11,9 +11,9 @@
                   <div class="absolute inset-0 transition duration-300 ease-in-out bg-black bg-opacity-50 group-hover:opacity-75"></div>
                   <div class="relative flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-4">
                       <h3 class="text-center">
-                          <a class="text-3xl font-bold text-center text-white " href="#">
+                          <a class="text-3xl font-bold text-center text-white " href="{{route('categories.show',$category[0])}}">
                               <span class="absolute inset-0"></span>
-
+                              {{$category[0]->name}}
                           </a>
                       </h3>
                   </div>
@@ -23,9 +23,9 @@
                   <div class="absolute inset-0 transition duration-300 ease-in-out bg-black bg-opacity-50 group-hover:opacity-75"></div>
                   <div class="relative flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-4">
                       <h3 class="text-center">
-                          <a class="text-3xl font-bold text-center text-white" href="#">
+                          <a class="text-3xl font-bold text-center text-white" href="{{route('categories.show',$category[1])}}">
                               <span class="absolute inset-0"></span>
-
+                              {{$category[1]->name}}
                           </a>
                       </h3>
                   </div>
@@ -35,9 +35,9 @@
                   <div class="absolute inset-0 transition duration-300 ease-in-out bg-black bg-opacity-50 group-hover:opacity-75"></div>
                   <div class="relative flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-4">
                       <h3 class="text-center">
-                          <a class="text-3xl font-bold text-center text-white" href="#">
+                          <a class="text-3xl font-bold text-center text-white" href="{{route('categories.show',$category[2])}}">
                               <span class="absolute inset-0"></span>
-
+                              {{$category[2]->name}}
                           </a>
                       </h3>
                   </div>
@@ -47,7 +47,7 @@
       </article>
   </section>
   <section class="py-8 mt-20" style="background-image: url({{asset('images/homes/barra-verde.png')}})">
-      <h1 class="text-3xl text-center text-white">Tenés alguna consulta o sugerencia</h1>
+      <h1 class="text-3xl text-center text-white">Tenés algun pedido específico, consulta o sugerencia</h1>
 
       <div class="flex justify-center mt-4">
           <a href="{{route('consulta.index')}}"
