@@ -12,7 +12,7 @@ class Category extends Model
     protected $guarded=['id'];
 
     //Relacion uno a muchos
-    public function types(){
+    public function subcategories(){
         return $this->hasMany(Type::class);
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUnidadacademicsTable extends Migration
+class CreateTeachersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateUnidadacademicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('unidadacademics', function (Blueprint $table) {
+        Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('sede_id');//sede que pertenece
-            $table->foreign('sede_id')->references('id')->on('sedes')->onDelete('set null');
+            $table->string('last_name');
+            $table->string('mail');
+            $table->string('title');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateUnidadacademicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unidadacademics');
+        Schema::dropIfExists('teachers');
     }
 }

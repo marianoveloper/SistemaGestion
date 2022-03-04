@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\dev\MatriculacionController;
 use Illuminate\Http\Request;
 
-class MatriculacionControllerController extends Controller
+class matriculacionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +40,10 @@ class MatriculacionControllerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\dev\MatriculacionController  $matriculacionController
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(MatriculacionController $matriculacionController)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class MatriculacionControllerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\dev\MatriculacionController  $matriculacionController
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(MatriculacionController $matriculacionController)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class MatriculacionControllerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\dev\MatriculacionController  $matriculacionController
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MatriculacionController $matriculacionController)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class MatriculacionControllerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\dev\MatriculacionController  $matriculacionController
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MatriculacionController $matriculacionController)
+    public function destroy($id)
     {
         //
     }
