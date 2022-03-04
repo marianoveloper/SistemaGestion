@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\Models\Resource;
+use App\Models\categoria;
+use App\Models\unidadacademic;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class catedra extends Model
 {
@@ -24,5 +28,10 @@ class catedra extends Model
      //relacion uno a muchos trae los usuarios en los cursos
      public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function categoria(){
+
+        return $this->belongsTo(categoria::class);
     }
 }

@@ -67,7 +67,15 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Course');
     }
 
-    public function formulario(){
-        return $this->hasMany(Formulario::class);
+    public function matriculacion(){
+
+        return $this-> hasMany(matriculacion::class);
     }
+
+    public function catedra(){
+
+        return $this->hasMany(catedra::class);
+    }
+
+
 }
