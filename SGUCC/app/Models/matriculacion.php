@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class matriculacion extends Model
 {
     use HasFactory;
+
+    protected $guarded=['id','tipo'];
+
+    const Alumno=1;
+    const Docente=2;
 }
